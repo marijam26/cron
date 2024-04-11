@@ -95,8 +95,6 @@ class Schedule {
         parseConstraint(months)?.where((x) => x >= 1 && x <= 12).toList();
     final parsedWeekdays = parseConstraint(weekdays)
         ?.where((x) => x >= 0 && x <= 7)
-        .map((x) => x == 0 ? 7 : x)
-        .toSet()
         .toList();
     return Schedule._(parsedSeconds, parsedMinutes, parsedHours, parsedDays,
         parsedMonths, parsedWeekdays);
